@@ -20,7 +20,7 @@ class User(Base):
     email = Column(String, unique=True)
 
     @classmethod
-    async def create_user(cls, db: AsyncSession, user_data: CreateUserDTO):
+    async def create_user(cls, db: AsyncSession, user_data: CreateUserDTO) -> "User":
         try:
             user = cls(username=user_data.username, email=user_data.email)
             db.add(user)
