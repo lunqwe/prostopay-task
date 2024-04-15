@@ -1,7 +1,4 @@
-from pydantic import BaseModel, Field
-from typing import Dict, Any, List
-from enum import Enum
-
+from pydantic import BaseModel
 """
 In order to improve the task logic, 2 DTO classes were created:
 
