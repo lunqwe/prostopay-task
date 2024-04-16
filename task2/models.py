@@ -34,7 +34,7 @@ class User(Base):
     async def get_user(cls, user_id: int, db: AsyncSession) -> UserDTO:
         try:
             async with db:
-                result = await db.execute(select(User).where(User.id == user_id))
+                result = await db.execute(select(cls).where(User.id == user_id))
                 user = result.scalars().first()
                 result_data = UserDTO(id=user.id, username=user.username, email=user.email)
                 return result_data
